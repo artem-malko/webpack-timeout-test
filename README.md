@@ -9,6 +9,7 @@ npm i
 ```
 
 We have server.js — just a simple express server, which serve index.html and built js-files
+server.js has a logic to respond with 404 code, if a request has `dynamic` in its path.
 
 dist dir — an output of webpack build
 
@@ -23,8 +24,6 @@ So, where is the problem?
 Let's have a look to our application: it has just 2 files: src/index.js (the entry point) and src/dynamic.js (just a simple function for import() test).
 
 src/index.js has a class LazyLoader, which wraps import('../somthing') with a retrier.
-
-server.js has a logic te respond with 404 code, if a request has `dynamic` in its path.
 
 If you look closer to views/index.html, you can see, what there are two scripts:
 
