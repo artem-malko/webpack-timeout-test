@@ -35,4 +35,4 @@ If you look closer to views/index.html, you can see, what there are two scripts:
 In general, it is not necessary to include a script tag with src to dynamic.js, cause webpack fetches it by itself. But where can be some cases, when I need to preload a dynamic js file via <script async>. For example, this is a recommended way to preload js-files in [React 18](https://github.com/reactwg/react-18/discussions/114). So, in that case, when the dynamic js is preloaded, and where is a error during its loading, webpack waits as many seconds, as it was set in webpack.config.js/chunkLoadTimeout
 And retry starts only after that timeout.
 
-Everything works perfect without preload (just try to remove sync script and restart the server). Retry starts after 2 seconds. But it breaks with preload via async script. In that case, retry starts after 7 seconds (chunkLoadTimeout + 2 seconds).
+Everything works perfect without preload (just try to remove async script and restart the server). Retry starts after 2 seconds. But it breaks with preload via async script. In that case, retry starts after 7 seconds (chunkLoadTimeout + 2 seconds).
