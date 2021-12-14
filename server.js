@@ -4,7 +4,7 @@ const app = express();
 
 // @JUST_FOR_TEST JUST FOR TEST
 app.use((req, res, next) => {
-  if (req.url.includes('test')) {
+  if (req.url.includes('dynamic')) {
     res.status(404).send();
   } else {
     next();
